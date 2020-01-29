@@ -1,10 +1,12 @@
 <?php
 
+/** @var $_ array */
 /**
  * Scripts and styles
  */
 \OCP\Util::addScript('testapp', 'testapp');  // include js/script.js
 \OCP\Util::addStyle('testapp', 'testapp');    // include css/style.css
+
 
 ?>
 <div id="app-navigation">
@@ -27,5 +29,10 @@
 </div>
 
 <div id="app-content">
-    <button class="klikker"><?php p($l->t('Click Me')); ?></button>
+    <p>
+        <button class="klikker"><?php p($l->t('Click Me')); ?></button>
+    </p>
+    <p>
+        <a href="<?php echo $_["route_1"]?>">Go to Route1</a>
+    </p>
 </div>

@@ -3,6 +3,7 @@ namespace OCA\TestApp\AppInfo;
 
 use \OCP\AppFramework\App;
 use \OCA\TestApp\Controller\PageController;
+use OCP\IContainer;
 
 
 class Application extends App {
@@ -12,7 +13,7 @@ class Application extends App {
 
         $container = $this->getContainer();
 
-        $container->registerService('PageController', function($c) {
+        $container->registerService('PageController', function(IContainer $c) {
             return new PageController(
                 $c->query('AppName'),
                 $c->query('Request')

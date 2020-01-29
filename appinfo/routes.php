@@ -15,9 +15,9 @@ $application->registerRoutes($this, [
             'verb' => 'GET'
         ],
         [
-            'name' => 'page#say_hi',
+            'name' => 'page#route_one',
             // The route
-            'url' => '/hi',
+            'url' => '/route1',
             // Only accessible with GET requests
             'verb' => 'GET'
         ],
