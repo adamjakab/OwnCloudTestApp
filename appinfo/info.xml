@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <info>
     <id>testapp</id>
-    <name>Test App</name>
-    <description>My first ownCloud App</description>
-    <licence>MIT</licence>
-    <author>Adam Jakab</author>
+    <name>TestApp</name>
+    <summary>TestApp is very cool.</summary>
+    <description><![CDATA[My first ownCloud app!]]></description>
+    <licence>AGPL</licence>
+    <author homepage="https://github.com/adamjakab">Adam Jakab</author>
     <version>0.0.1</version>
     <namespace>TestApp</namespace>
     <category>tool</category>
@@ -12,3 +13,4 @@
         <owncloud min-version="10" max-version="10" />
     </dependencies>
 </info>
+
