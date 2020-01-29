@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<info>
+    <id>testapp</id>
+    <name>Test App</name>
+    <description>My first ownCloud App</description>
+    <licence>MIT</licence>
+    <author>Adam Jakab</author>
+    <version>0.0.1</version>
+    <namespace>TestApp</namespace>
+    <category>tool</category>
+    <dependencies>
+        <owncloud min-version="10" max-version="10" />
+    </dependencies>
+</info>
