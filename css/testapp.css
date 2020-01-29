@@ -1,4 +1,11 @@
-body {
-    background-image: url('https://source.unsplash.com/1600x900/?nature,water') !important;
-    background-size: cover !important;
+#app-navigation {
+    background: #ada592 !important;
+}
+
+#app-settings-header {
+    background: #ada592 !important;
+}
+
+#app-content {
+    background: #e4dcc8 !important;
 }

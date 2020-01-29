@@ -1,16 +1,23 @@
 <?php
 
-namespace OCA\TestApp\AppInfo;
+use OCA\TestApp\AppInfo\Application;
 
 $application = new Application();
 
 $application->registerRoutes($this, [
     'routes' => [
         [
-            // The handler is the PageController's index method
+            // Controller: PageController Method: Index
             'name' => 'page#index',
             // The route
             'url' => '/',
+            // Only accessible with GET requests
+            'verb' => 'GET'
+        ],
+        [
+            'name' => 'page#say_hi',
+            // The route
+            'url' => '/hi',
             // Only accessible with GET requests
             'verb' => 'GET'
         ],

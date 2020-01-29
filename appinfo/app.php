@@ -27,5 +27,14 @@
 /**
  * Scripts and styles
  */
-\OCP\Util::addScript('testapp', 'testapp');  // include js/script.js
-\OCP\Util::addStyle('testapp', 'testapp');    // include css/style.css
+//\OCP\Util::addScript('testapp', 'testapp');  // include js/script.js
+//\OCP\Util::addStyle('testapp', 'testapp');    // include css/style.css
+
+/**
+ * CSP - allow external images
+ */
+/*$manager = \OC::$server->getContentSecurityPolicyManager();
+$policy = new \OC\Security\CSP\ContentSecurityPolicy();
+$policy->addAllowedImageDomain('source.unsplash.com');
+$policy->addAllowedImageDomain('images.unsplash.com');
+$manager->addDefaultPolicy($policy);*/
