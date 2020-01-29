@@ -31,7 +31,8 @@ class PageController extends Controller
 
         $route1 = "route1";
         $parameters = [
-            'route_1' => $route1
+            'route_1' => $route1,
+            'dummy_1' => "I am a dummy from the controller"
         ];
 
         return new TemplateResponse($this->appName, $templateName, $parameters);
