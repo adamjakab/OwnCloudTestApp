@@ -1,9 +1,9 @@
 <?php
 namespace OCA\TestApp\AppInfo;
 
-
 use OCA\TestApp\Controller\ThingApiController;
 use OCA\TestApp\Entity\ThingMapper;
+use OCA\TestApp\Middleware\ApiMiddleware;
 use \OCP\AppFramework\App;
 use \OCA\TestApp\Controller\PageController;
 use OCP\AppFramework\IAppContainer;
@@ -39,7 +39,6 @@ class Application extends App {
                 $c->query('UserId'),
                 $c->query('ThingMapper'),
                 $c->query('L10N'),
-                $c->query('Log'),
                 $c->query('URLGenerator')
             );
         });
@@ -53,6 +52,18 @@ class Application extends App {
                 $c->getServer()->getDatabaseConnection()
             );
         });
+
+        /**
+         * Middleware
+         */
+        $container->registerService('ApiMiddleware', function (IAppContainer $c) {
+            return new ApiMiddleware(
+                $c->query('Request'),
+                $c->query('UserId'),
+                $c->getServer()->getLogger()
+            );
+        });
+        $container->registerMiddleWare('ApiMiddleware');
 
     }
 }

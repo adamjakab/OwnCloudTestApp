@@ -26,20 +26,16 @@ class ThingApiController extends ApiController
     /** @var IL10N */
     private $l10n;
 
-    /** @var Log */
-    private $logger;
-
     /** @var IURLGenerator */
     private $urlGenerator;
 
-    public function __construct($AppName, IRequest $request, string $userId, ThingMapper $thingMapper,
-                                IL10N $l10n, Log $logger, IURLGenerator $urlGenerator)
+    public function __construct($AppName, IRequest $request, $userId, ThingMapper $thingMapper,
+                                IL10N $l10n, IURLGenerator $urlGenerator)
     {
         parent::__construct($AppName, $request);
         $this->thingMapper = $thingMapper;
         $this->userId = $userId;
         $this->l10n = $l10n;
-        $this->logger = $logger;
         $this->urlGenerator = $urlGenerator;
     }
 
