@@ -30,6 +30,6 @@
         <button class="klikker"><?php p($l->t('Click Me')); ?></button>
     </p>
     <p>
-        <a href="<?php echo $_["route_1"]?>">Go to Route1</a>
+        <a href="<?php echo $_["route_1"]?>">Go to Things API</a>
     </p>
 </div>

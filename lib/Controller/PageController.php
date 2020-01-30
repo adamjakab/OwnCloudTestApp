@@ -19,9 +19,6 @@ use OCA\TestApp\Database\Helper as DatabaseHelper;
  */
 class PageController extends Controller
 {
-    /** @var IRoute */
-    private $router;
-
     /** @var string */
     private $userId;
 
@@ -43,26 +40,13 @@ class PageController extends Controller
     {
         $templateName = 'index';  // will use templates/index.php
 
-        $route1 = "route1";
+        $route1 = "api/things";
         $parameters = [
             'route_1' => $route1,
             'dummy_1' => "I am a dummy from the controller"
         ];
 
         return new TemplateResponse($this->appName, $templateName, $parameters);
-    }
-
-    /**
-     * @NoAdminRequired
-     * @NoCSRFRequired
-     */
-    public function routeOne()
-    {
-
-        $list = $this->thingMapper->findAll($this->userId);
-
-        return new DataResponse($list);
-
     }
 }
 

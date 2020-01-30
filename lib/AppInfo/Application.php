@@ -1,7 +1,8 @@
 <?php
 namespace OCA\TestApp\AppInfo;
 
-use OC\Server;
+
+use OCA\TestApp\Controller\ThingApiController;
 use OCA\TestApp\Entity\ThingMapper;
 use \OCP\AppFramework\App;
 use \OCA\TestApp\Controller\PageController;
@@ -28,6 +29,18 @@ class Application extends App {
                 $c->query('UserId'),
                 $c->query('ThingMapper')
 
+            );
+        });
+
+        $container->registerService('ThingApiController', function (IContainer $c) {
+            return new ThingApiController(
+                $c->query('AppName'),
+                $c->query('Request'),
+                $c->query('UserId'),
+                $c->query('ThingMapper'),
+                $c->query('L10N'),
+                $c->query('Log'),
+                $c->query('URLGenerator')
             );
         });
 
