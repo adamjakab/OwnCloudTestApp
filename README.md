@@ -9,4 +9,5 @@ This is just a skeleton app for OwnCloud (tested on 10.3.2).
 5) now you should find it in the menu
 
 ## Notes
-No integrity check
+Experimental code. App is not signed (no signature.json), so integrity checks will fail producing the "There were problems with the code integrity check..." notification.
+
