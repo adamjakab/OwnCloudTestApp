@@ -6,11 +6,13 @@
     <description><![CDATA[My first ownCloud app!]]></description>
     <licence>AGPL</licence>
     <author homepage="https://github.com/adamjakab">Adam Jakab</author>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <namespace>TestApp</namespace>
+    <use-migrations>true</use-migrations>
     <category>tool</category>
     <dependencies>
-        <owncloud min-version="10" max-version="10" />
+        <owncloud min-version="10.3" max-version="10" />
     </dependencies>
+    <repository type="git">https://github.com/adamjakab/OwnCloudTestApp.git</repository>
 </info>
 

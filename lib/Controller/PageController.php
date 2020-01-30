@@ -2,11 +2,17 @@
 
 namespace OCA\TestApp\Controller;
 
+use http\Client\Response;
+use OCA\TestApp\AppInfo\Application;
+use OCA\TestApp\Entity\ThingMapper;
+use OCP\AppFramework\App;
+use OCP\AppFramework\Http\DataResponse;
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\Controller;
 use OCP\Route\IRoute;
+use OCA\TestApp\Database\Helper as DatabaseHelper;
 
 /**
  * Define a new page controller
@@ -16,9 +22,17 @@ class PageController extends Controller
     /** @var IRoute */
     private $router;
 
-    public function __construct($AppName, IRequest $request)
+    /** @var string */
+    private $userId;
+
+    /** @var ThingMapper */
+    private $thingMapper;
+
+    public function __construct($AppName, IRequest $request, string $userId, ThingMapper $thingMapper)
     {
         parent::__construct($AppName, $request);
+        $this->thingMapper = $thingMapper;
+        $this->userId = $userId;
     }
 
     /**
@@ -44,8 +58,11 @@ class PageController extends Controller
      */
     public function routeOne()
     {
-        $data = ['name' => 'test', 'values' => [1, 2, 3]];
-        return new JSONResponse($data);
+
+        $list = $this->thingMapper->findAll($this->userId);
+
+        return new DataResponse($list);
+
     }
 }
 
