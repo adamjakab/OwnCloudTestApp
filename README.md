@@ -11,6 +11,11 @@ This is just a skeleton app for OwnCloud (tested on 10.3.2).
 ## Notes
 Experimental code. App is not signed (no signature.json), so integrity checks will fail producing the "There were problems with the code integrity check..." notification.
 
+
+## Todos
+- Implement use of language files
+- show API endpoints in readme
+
 ## Resources
 - Database: https://doc.owncloud.com/server/10.3/developer_manual/app/fundamentals/database.html
 - XML Schema documentation: http://www.wiltonhotel.com/_ext/pear/docs/MDB2/docs/xml_schema_documentation.html
